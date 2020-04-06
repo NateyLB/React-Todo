@@ -15,7 +15,7 @@ class App extends React.Component {
     super();
     this.state= { toDoList: seed}
   };
-
+  //handles submit for the task
   submit = (event, item) => {
     event.preventDefault();
     const obj = {
@@ -25,7 +25,7 @@ class App extends React.Component {
     };
     this.setState({toDoList: [...this.state.toDoList, obj]})
   };
-
+  //toggles checked state
   toggleItem = itemId => {
     this.setState({
       toDoList: this.state.toDoList.map(item => {
@@ -44,12 +44,8 @@ class App extends React.Component {
       })
     });
   };
-
+  //filters already completed tasks
   clearCompleted = event => {
-    console.log(this.state.toDoList.length)
-    if(this.state.toDoList.length <= 0){
-      return 
-    }
     this.setState({
       toDoList: this.state.toDoList.filter(item =>{
         return item.completed === false
