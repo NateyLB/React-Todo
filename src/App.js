@@ -3,9 +3,6 @@ import ToDoForm from "./components/TodoForm.js"
 import ToDoList from "./components/TodoList.js"
 import { v4 as uuid } from 'uuid';
 
-const seed = 
-[]
-
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -13,7 +10,7 @@ class App extends React.Component {
 
   constructor(){
     super();
-    this.state= { toDoList: seed}
+    this.state= { toDoList: []}
   };
   //handles submit for the task
   submit = (event, item) => {
