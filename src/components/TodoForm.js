@@ -1,5 +1,6 @@
 import React from 'react';
 
+//creates the form 
 class ToDoForm extends React.Component{
     constructor(){
         super()
