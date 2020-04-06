@@ -1,0 +1,4 @@
+form .toDo{
+    display: flex;
+    flex-direction: row;
+}
