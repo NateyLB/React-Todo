@@ -46,9 +46,13 @@ class App extends React.Component {
   };
 
   clearCompleted = event => {
+    console.log(this.state.toDoList.length)
+    if(this.state.toDoList.length <= 0){
+      return 
+    }
     this.setState({
       toDoList: this.state.toDoList.filter(item =>{
-        return item.completed == false
+        return item.completed === false
       })
     });
   };
@@ -57,8 +61,8 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <ToDoForm onSubmit={this.submit}/>
-        <ToDoList toDoList={this.state.toDoList} toggleItem={this.toggleItem} clearCompleted={this.clearCompleted}/>
+        <ToDoForm onSubmit={this.submit} clearCompleted={this.clearCompleted}/>
+        <ToDoList toDoList={this.state.toDoList} toggleItem={this.toggleItem}/>
       </div>
     );
   }

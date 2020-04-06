@@ -14,11 +14,8 @@ class ToDoList extends React.Component{
         return(
             <div>
                 {this.props.toDoList.map(element => {
-                    console.log(element)
                     return <ToDo item={element} toggleItem={this.props.toggleItem}/>
                 })}
-
-                <button onClick={this.props.clearCompleted}>Clear Completed</button>
             </div>
         )
     }

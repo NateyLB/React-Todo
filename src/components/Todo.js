@@ -11,7 +11,7 @@ class ToDo extends React.Component{
 
         return(
             <div>
-                <form class="toDo">
+                <form className="toDo">
                     <h4>{this.props.item.task}</h4>
                     <input   onClick={() => this.props.toggleItem(this.props.item.id)} type="checkbox" checked={this.props.item.completed} />
                 </form>
