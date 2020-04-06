@@ -6,7 +6,7 @@ class ToDoForm extends React.Component{
         super()
         this.state = {
             task:"",
-            id:uuid(),
+            id: "",
             completed:false
         }
     }
@@ -20,7 +20,7 @@ render(){
         <div>
             <form onSubmit={event => this.props.onSubmit(event, this.state)}>
                 <input type="text" onChange={this.onChange}/>
-                <button>Submit</button>
+                <button>Add task</button>
             </form>
         </div>
     )

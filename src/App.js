@@ -1,19 +1,10 @@
 import React from 'react';
 import ToDoForm from "./components/TodoForm.js"
 import ToDoList from "./components/TodoList.js"
+import { v4 as uuid } from 'uuid';
 
 const seed = 
-[{
-  task: 'Organize Garage',
-  id: 1528817077286,
-  completed: false
-},
-{
-  task: 'Bake Cookies',
-  id: 1528817084358,
-  completed: false
-}
-];
+[]
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -29,7 +20,7 @@ class App extends React.Component {
     event.preventDefault();
     const obj = {
       task: item.task,
-      id: item.id,
+      id: uuid(),
       completed: item.completed
     };
     this.setState({toDoList: [...this.state.toDoList, obj]})
@@ -56,8 +47,8 @@ class App extends React.Component {
 
   clearCompleted = event => {
     this.setState({
-      toDoList: this.state.toDoList.map(item =>{
-        return {...item, completed: false}
+      toDoList: this.state.toDoList.filter(item =>{
+        return item.completed == false
       })
     });
   };
